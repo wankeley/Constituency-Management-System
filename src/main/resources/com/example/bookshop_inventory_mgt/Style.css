@@ -1,0 +1,51 @@
+/* Define the very light low blue color */
+.very-light-low-blue {
+    -fx-background-color: #EBF3FE; /* Hexadecimal value for a very light blue */
+    /* Alternatively, you can use the RGB format */
+    /* -fx-background-color: rgb(208, 225, 249); */
+}
+
+/* Example usage for different components */
+.button {
+    -fx-background-color: #d0e1f9; /* Background color for buttons */
+    -fx-text-fill: #003366; /* Darker color for text to contrast with background */
+}
+
+.label {
+    -fx-text-fill: #003366; /* Darker color for labels to provide good contrast */
+}
+
+.text-field {
+    -fx-background-color: #f0f5ff; /* Slightly different shade for input fields */
+    -fx-border-color: #d0e1f9; /* Border color for input fields */
+}
+
+.pane {
+    -fx-background-color: #d0e1f9; /* Background color for containers or panes */
+}
+
+/* For borders or accents */
+.border-accent {
+    -fx-border-color: #d0e1f9; /* Border color using the very light low blue */
+    -fx-border-width: 2px; /* Border width */
+}
+
+* Define the stroke color */
+.stroke-gray {
+    -fx-border-color: #979797; /* Stroke or border color */
+    -fx-border-width: 2px; /* Width of the border */
+
+}
+
+.drop-shadow {
+    -fx-effect: dropshadow(gaussian, #000000, 10, 0, 0.5, 0.5);
+    /* Explanation:
+       - `gaussian`: Type of shadow.
+       - `#000000`: Color of the shadow (black).
+       - `10`: Radius of the shadow.
+       - `0`: Spread of the shadow (0 means no spread).
+       - `5`: Horizontal offset of the shadow.
+       - `5`: Vertical offset of the shadow.
+    */
+}
+
