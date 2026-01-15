@@ -20,6 +20,6 @@ RUN npm run build
 EXPOSE 3000 5000
 ENV NODE_ENV=production
 
-# Start both server and Next in production
+# Run database migrations and seed, then start both server and Next in production
 # Express runs on 5000, Next.js uses PORT env var (Railway sets to 8080)
-CMD ["sh", "-c", "node server/src/app.js & npx next start"]
+CMD ["sh", "-c", "npx prisma migrate deploy && npx prisma db seed && node server/src/app.js & npx next start"]
