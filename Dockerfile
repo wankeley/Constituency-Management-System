@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:20-slim
 
 # Create app directory
 WORKDIR /app
@@ -14,8 +14,9 @@ COPY . .
 RUN npx prisma generate || true
 RUN npm run build
 
-EXPOSE 3000
-ENV PORT=3000
+EXPOSE 3000 5000
+ENV PORT=5000
+ENV NODE_ENV=production
 
 # Start both server and Next in production
 CMD ["sh", "-c", "npm run start"]
