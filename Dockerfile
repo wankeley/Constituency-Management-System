@@ -21,5 +21,5 @@ EXPOSE 3000 5000
 ENV NODE_ENV=production
 
 # Start both server and Next in production
-# Express runs on 5000, Next.js runs on 3000
-CMD ["sh", "-c", "node server/src/app.js & next start -p 3000"]
+# Express runs on 5000, Next.js uses PORT env var (Railway sets to 8080)
+CMD ["sh", "-c", "node server/src/app.js & next start"]
