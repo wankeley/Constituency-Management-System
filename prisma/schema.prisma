@@ -1,0 +1,103 @@
+// This is your Prisma schema file
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("CONSTITUENT") // ADMIN, STAFF, CONSTITUENT
+  voterId   String?
+  age       Int?
+  location  String?
+  phone     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  pollsCreated      Poll[]         @relation("PollCreator")
+  pollResponses     PollResponse[]
+  eventsCreated     Event[]        @relation("EventCreator")
+  eventRsvps        EventRSVP[]
+  issuesReported    Issue[]        @relation("IssueReporter")
+  issuesAssigned    Issue[]        @relation("IssueAssignee")
+  announcements     Announcement[]
+}
+
+model Poll {
+  id          Int            @id @default(autoincrement())
+  title       String
+  description String?
+  options     String         // JSON array of options
+  isActive    Boolean        @default(true)
+  createdAt   DateTime       @default(now())
+  endDate     DateTime?
+  createdBy   Int
+  creator     User           @relation("PollCreator", fields: [createdBy], references: [id])
+  responses   PollResponse[]
+}
+
+model PollResponse {
+  id             Int      @id @default(autoincrement())
+  pollId         Int
+  userId         Int
+  selectedOption Int      // Index of selected option
+  createdAt      DateTime @default(now())
+  poll           Poll     @relation(fields: [pollId], references: [id], onDelete: Cascade)
+  user           User     @relation(fields: [userId], references: [id])
+
+  @@unique([pollId, userId])
+}
+
+model Event {
+  id          Int         @id @default(autoincrement())
+  title       String
+  description String?
+  location    String
+  eventDate   DateTime
+  createdAt   DateTime    @default(now())
+  createdBy   Int
+  creator     User        @relation("EventCreator", fields: [createdBy], references: [id])
+  rsvps       EventRSVP[]
+}
+
+model EventRSVP {
+  id        Int      @id @default(autoincrement())
+  eventId   Int
+  userId    Int
+  status    String   @default("attending") // attending, maybe, declined
+  createdAt DateTime @default(now())
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@unique([eventId, userId])
+}
+
+model Issue {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  status      String   @default("OPEN") // OPEN, IN_PROGRESS, RESOLVED
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  reportedBy  Int
+  assignedTo  Int?
+  reporter    User     @relation("IssueReporter", fields: [reportedBy], references: [id])
+  assignee    User?    @relation("IssueAssignee", fields: [assignedTo], references: [id])
+}
+
+model Announcement {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+  createdBy Int
+  creator   User     @relation(fields: [createdBy], references: [id])
+}
