@@ -88,7 +88,7 @@ export default function AnnouncementsPage() {
     return (
         <div className="space-y-6 animate-fade-up">
             {/* Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                 <div>
                     <h2 className="text-2xl font-bold text-slate-800">Announcements</h2>
                     <p className="text-slate-500">Broadcast updates to constituents</p>
@@ -110,12 +110,12 @@ export default function AnnouncementsPage() {
                         className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all card-hover"
                         style={{ animationDelay: `${index * 0.1}s` }}
                     >
-                        <div className="flex items-start justify-between gap-4">
-                            <div className="flex gap-4 flex-1">
+                        <div className="flex items-start justify-between gap-3 sm:gap-4">
+                            <div className="flex gap-3 sm:gap-4 flex-1 min-w-0">
                                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-orange-100">
                                     <Megaphone className="w-6 h-6 text-white" />
                                 </div>
-                                <div className="flex-1">
+                                <div className="flex-1 min-w-0">
                                     <h3 className="text-lg font-semibold text-slate-800 mb-2">{announcement.title}</h3>
                                     <p className="text-slate-600 whitespace-pre-wrap mb-4">{announcement.content}</p>
                                     <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">

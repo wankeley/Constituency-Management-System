@@ -103,14 +103,14 @@ export default function EventsPage() {
     return (
         <div className="space-y-6 animate-fade-up">
             {/* Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                 <div>
                     <h2 className="text-2xl font-bold text-slate-800">Events</h2>
                     <p className="text-slate-500">Organize and manage community events</p>
                 </div>
                 <button
                     onClick={() => setShowModal(true)}
-                    className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl shadow-lg shadow-cyan-100 hover:shadow-cyan-200 hover:scale-105 transition-all"
+                    className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl shadow-lg shadow-cyan-100 hover:shadow-cyan-200 hover:scale-105 transition-all whitespace-nowrap"
                 >
                     <Plus className="w-5 h-5" />
                     Create Event
@@ -118,7 +118,7 @@ export default function EventsPage() {
             </div>
 
             {/* Events Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {events.map((event) => (
                     <div
                         key={event.id}

@@ -98,14 +98,14 @@ export default function PollsPage() {
     return (
         <div className="space-y-6 animate-fade-up">
             {/* Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                 <div>
                     <h2 className="text-2xl font-bold text-slate-800">Polls & Surveys</h2>
                     <p className="text-slate-500">Create and manage community polls</p>
                 </div>
                 <button
                     onClick={() => setShowModal(true)}
-                    className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg shadow-indigo-100 hover:shadow-indigo-200 hover:scale-105 transition-all"
+                    className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg shadow-indigo-100 hover:shadow-indigo-200 hover:scale-105 transition-all whitespace-nowrap"
                 >
                     <Plus className="w-5 h-5" />
                     Create Poll
@@ -113,7 +113,7 @@ export default function PollsPage() {
             </div>
 
             {/* Polls Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {polls.map((poll) => (
                     <div
                         key={poll.id}

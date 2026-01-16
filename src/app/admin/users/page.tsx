@@ -79,13 +79,13 @@ export default function UsersPage() {
     return (
         <div className="space-y-6 animate-fade-up">
             {/* Header */}
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4">
                 <div>
                     <h2 className="text-2xl font-bold text-slate-800">User Management</h2>
                     <p className="text-slate-500">Manage platform users and their roles</p>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-3">
-                    <div className="relative">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                    <div className="relative flex-1 sm:flex-none">
                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                         <input
                             type="text"
@@ -95,7 +95,7 @@ export default function UsersPage() {
                             className="w-full sm:w-64 pl-11 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 transition-all"
                         />
                     </div>
-                    <div className="relative">
+                    <div className="relative flex-1 sm:flex-none">
                         <Filter className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                         <select
                             value={roleFilter}
@@ -112,18 +112,18 @@ export default function UsersPage() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 {["ADMIN", "STAFF", "CONSTITUENT"].map((role) => {
                     const count = users.filter(u => u.role === role).length;
                     const roleInfo = roleColors[role];
                     const Icon = roleInfo.icon;
                     return (
-                        <div key={role} className={`p-4 rounded-xl ${roleInfo.bg} border ${roleInfo.border}`}>
-                            <div className="flex items-center gap-3">
-                                <Icon className={`w-5 h-5 ${roleInfo.text}`} />
+                        <div key={role} className={`p-3 sm:p-4 rounded-xl ${roleInfo.bg} border ${roleInfo.border}`}>
+                            <div className="flex items-center gap-2 sm:gap-3">
+                                <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${roleInfo.text}`} />
                                 <div>
-                                    <p className={`text-2xl font-bold ${roleInfo.text}`}>{count}</p>
-                                    <p className="text-sm text-slate-600">{role.charAt(0) + role.slice(1).toLowerCase()}s</p>
+                                    <p className={`text-xl sm:text-2xl font-bold ${roleInfo.text}`}>{count}</p>
+                                    <p className="text-xs sm:text-sm text-slate-600">{role.charAt(0) + role.slice(1).toLowerCase()}s</p>
                                 </div>
                             </div>
                         </div>
@@ -132,7 +132,7 @@ export default function UsersPage() {
             </div>
 
             {/* Users Grid */}
-            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {filteredUsers.map((user) => {
                     const roleInfo = roleColors[user.role];
                     const Icon = roleInfo.icon;

@@ -94,7 +94,7 @@ export default function IssuesPage() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-4">
                 {[
                     { label: "Total", value: stats.total, key: "", color: "from-slate-500 to-slate-600", shadow: "shadow-slate-100" },
                     { label: "Open", value: stats.open, key: "OPEN", color: "from-red-500 to-red-600", shadow: "shadow-red-100" },
@@ -104,15 +104,15 @@ export default function IssuesPage() {
                     <button
                         key={i}
                         onClick={() => setFilter(stat.key)}
-                        className={`p-4 rounded-xl bg-white border text-left transition-all hover:scale-105 ${filter === stat.key
+                        className={`p-3 sm:p-4 rounded-xl bg-white border text-left transition-all hover:scale-105 ${filter === stat.key
                                 ? "ring-2 ring-indigo-500 border-indigo-200"
                                 : "border-slate-100 shadow-sm"
                             }`}
                     >
-                        <div className={`inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br ${stat.color} ${stat.shadow} mb-2`}>
-                            <span className="text-white font-bold">{stat.value}</span>
+                        <div className={`inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br ${stat.color} ${stat.shadow} mb-2`}>
+                            <span className="text-white font-bold text-sm">{stat.value}</span>
                         </div>
-                        <p className="text-sm text-slate-600 font-medium">{stat.label}</p>
+                        <p className="text-xs sm:text-sm text-slate-600 font-medium">{stat.label}</p>
                     </button>
                 ))}
             </div>
