@@ -168,10 +168,10 @@ export default function PollsPage() {
             {/* Results Modal */}
             {selectedPoll && (
                 <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-                    <div className="bg-white border border-slate-200 rounded-2xl p-6 max-w-lg w-full shadow-2xl">
+                    <div className="bg-white border border-slate-200 rounded-2xl p-6 max-w-lg w-full shadow-2xl relative">
                         <div className="flex items-center justify-between mb-6">
                             <h3 className="text-xl font-bold text-slate-800">Poll Results</h3>
-                            <button onClick={() => setSelectedPoll(null)} className="text-slate-400 hover:text-slate-600 p-1 hover:bg-slate-100 rounded-lg transition-colors">
+                            <button onClick={() => setSelectedPoll(null)} className="text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors p-1 absolute top-4 right-4" title="Close">
                                 <X className="w-5 h-5" />
                             </button>
                         </div>
@@ -212,10 +212,10 @@ export default function PollsPage() {
             {/* Create Modal */}
             {showModal && (
                 <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-                    <div className="bg-white border border-slate-200 rounded-2xl p-6 max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                    <div className="bg-white border border-slate-200 rounded-2xl p-6 max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl relative">
                         <div className="flex items-center justify-between mb-6">
                             <h3 className="text-xl font-bold text-slate-800">Create New Poll</h3>
-                            <button onClick={() => setShowModal(false)} className="text-slate-400 hover:text-slate-600 p-1 hover:bg-slate-100 rounded-lg transition-colors">
+                            <button onClick={() => setShowModal(false)} className="text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors p-1 absolute top-4 right-4" title="Close">
                                 <X className="w-5 h-5" />
                             </button>
                         </div>

@@ -146,6 +146,7 @@ export default function LoginPage() {
                         <p className="text-xs text-slate-500 mb-2 font-medium">Demo credentials:</p>
                         <p className="text-xs text-slate-600">Admin: admin@constituency.gov / admin123</p>
                         <p className="text-xs text-slate-600">Staff: staff@constituency.gov / admin123</p>
+                        <p className="text-xs text-slate-600">User: user@constituency.gov / admin123</p>
                     </div>
                 </div>
             </div>

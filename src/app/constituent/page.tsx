@@ -69,7 +69,7 @@ export default function ConstituentHome() {
     return (
         <div className="space-y-8 animate-fade-up">
             {/* Welcome Banner */}
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 p-6 md:p-8 shadow-xl">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 p-6 md:p-8 shadow-xl">
                 <div className="absolute inset-0 opacity-10">
                     <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
                         <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
@@ -205,6 +205,69 @@ export default function ConstituentHome() {
                             )}
                         </div>
                     </div>
+                </div>
+            </div>
+
+            {/* Benefits Section */}
+            <div className="grid md:grid-cols-2 gap-6 mt-12">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 md:p-8">
+                    <h2 className="text-2xl font-bold text-slate-800 mb-4">Why Engage with Your MP</h2>
+                    <ul className="space-y-3 text-slate-700">
+                        <li className="flex gap-3">
+                            <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
+                            <span><strong>Have Your Voice Heard:</strong> Participate in polls and share your opinions on issues affecting your community</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
+                            <span><strong>Report Local Issues:</strong> Bring attention to problems in your neighborhood that need resolution</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
+                            <span><strong>Stay Informed:</strong> Get direct updates about community events and important announcements</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
+                            <span><strong>Build Community:</strong> Connect with neighbors and participate in community events</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
+                            <span><strong>Direct Communication:</strong> Receive announcements directly from your elected representatives</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
+                            <span><strong>Track Progress:</strong> Monitor how your MP is addressing constituency issues and concerns</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-6 md:p-8">
+                    <h2 className="text-2xl font-bold text-slate-800 mb-4">How This Portal Works</h2>
+                    <ul className="space-y-3 text-slate-700">
+                        <li className="flex gap-3">
+                            <span className="text-green-600 font-bold flex-shrink-0">►</span>
+                            <span><strong>Stay Updated:</strong> Read the latest announcements about community initiatives and government programs</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-green-600 font-bold flex-shrink-0">►</span>
+                            <span><strong>Participate in Polls:</strong> Vote on community issues and help shape local policy decisions</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-green-600 font-bold flex-shrink-0">►</span>
+                            <span><strong>Join Events:</strong> RSVP for community gatherings, town halls, and civic activities</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-green-600 font-bold flex-shrink-0">►</span>
+                            <span><strong>Report Issues:</strong> Submit concerns about infrastructure, services, or community problems</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-green-600 font-bold flex-shrink-0">►</span>
+                            <span><strong>Track Solutions:</strong> See the status of reported issues from submission to resolution</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-green-600 font-bold flex-shrink-0">►</span>
+                            <span><strong>Manage Your Profile:</strong> Keep your information current and adjust notification preferences</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

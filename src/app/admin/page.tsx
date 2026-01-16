@@ -247,6 +247,69 @@ export default function AdminDashboard() {
                     )}
                 </div>
             </div>
+
+            {/* Benefits Section */}
+            <div className="grid md:grid-cols-2 gap-6 mt-12">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 md:p-8">
+                    <h2 className="text-2xl font-bold text-slate-800 mb-4">Why This System Matters for MPs</h2>
+                    <ul className="space-y-3 text-slate-700">
+                        <li className="flex gap-3">
+                            <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
+                            <span><strong>Direct Engagement:</strong> Build meaningful relationships with your constituents through polls, announcements, and issue tracking</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
+                            <span><strong>Real-time Feedback:</strong> Understand constituent needs instantly and respond with transparency</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
+                            <span><strong>Issue Management:</strong> Track and resolve community problems efficiently, showing progress and commitment</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
+                            <span><strong>Trust Building:</strong> Demonstrate responsiveness and accountability, strengthening constituent confidence</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
+                            <span><strong>Electoral Advantage:</strong> Engaged constituencies show higher support, improving election prospects</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
+                            <span><strong>Data-Driven Decisions:</strong> Make informed policy choices based on constituent input and community priorities</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-6 md:p-8">
+                    <h2 className="text-2xl font-bold text-slate-800 mb-4">Key System Features</h2>
+                    <ul className="space-y-3 text-slate-700">
+                        <li className="flex gap-3">
+                            <span className="text-green-600 font-bold flex-shrink-0">►</span>
+                            <span><strong>Announcements:</strong> Communicate important updates and initiatives to all constituents instantly</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-green-600 font-bold flex-shrink-0">►</span>
+                            <span><strong>Polls & Surveys:</strong> Gather constituent opinions on key issues and policy matters</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-green-600 font-bold flex-shrink-0">►</span>
+                            <span><strong>Event Management:</strong> Organize community meetings and keep constituents informed</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-green-600 font-bold flex-shrink-0">►</span>
+                            <span><strong>Issue Tracking:</strong> Monitor and resolve constituent complaints with full transparency</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-green-600 font-bold flex-shrink-0">►</span>
+                            <span><strong>User Management:</strong> Organize your team and assign responsibilities efficiently</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-green-600 font-bold flex-shrink-0">►</span>
+                            <span><strong>Analytics Dashboard:</strong> Track engagement metrics and measure your impact</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     );
 }
